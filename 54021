@@ -1,0 +1,61 @@
+#словари
+
+alekseev_ivan = {'first_name': 'Ivan', 'last_name': 'Alekseev', 'age': 30, 'city': 'Astrahan'}
+print(alekseev_ivan['first_name'])
+print(alekseev_ivan['last_name'])
+print(alekseev_ivan['age'])
+print(alekseev_ivan['city'])
+print()
+
+favorite_numbers = {
+    'kirill': [11, 21],
+    'ivan': [7, 12],
+    'savatan': [34, 43],
+    'oleg': [4, 56],
+    'roman': [43, 77],
+    }
+for name, numbers in favorite_numbers.items():
+	print(name.title())
+	for number in numbers:
+		print('\t', number)
+print()
+
+glossary = {
+    'списки': 'коллекции обьектов разных типов',
+    'кортежи': 'списки с защитой от дурака',
+    'словари': 'хранят ключ-значение',
+    'класс': 'тип данных, хранящий атрибуты и методы',
+    'if': 'инструкция если',
+    'while': 'цикл пока',
+    'for': 'для',
+    }
+for k, v in glossary.items():
+	print(k.title(), '-', v)
+print()
+
+rivers = {
+    'volga': 'russia',
+    'huanhe': 'china',
+    'temza': 'england',
+    }
+for r, c in rivers.items():
+    print('The', r.title(), 'runs through', c.title())
+for p in rivers.keys():
+    print(p.title())
+for b in rivers.values():
+    print(b.title())
+print()
+
+favorite_languages = {
+    'oleg': 'python',
+    'petya': 'haskel',
+    'lolka': 'brainfuck',
+    'edward': 'ruby',
+    }
+participans = ['julya', 'lolka', 'tyareg', 'oleg']
+for name in participans:
+    if name in favorite_languages.keys():
+    	print('Cпасибо что прошли опрос', name.title() + '!')
+    else:
+    	print('Привет', name.title(), 'Не хотите ли поучавствовать в опросе?')
+    

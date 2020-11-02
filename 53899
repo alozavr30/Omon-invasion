@@ -1,0 +1,16 @@
+print("Операция сложения:")
+print("Введите 'q' для выхода.")
+
+while True:
+    first_number = input ("\nВведите первое число: ")
+    if first_number == 'q':
+	    break
+    second_number = input ("\nВведите второе число: ")
+    if second_number == 'q':
+        break
+    try:
+        answer = int(first_number) + int(second_number)
+    except ValueError:
+        print("Пожалуйста введите цифровое значение!")
+    else:
+        print ('\nОтвет: ' + str(answer))
