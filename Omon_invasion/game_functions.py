@@ -48,9 +48,13 @@ def check_events(ai_settings, screen, navalny, bullets):
 		elif event.type == pygame.KEYUP:
 			check_keyup_events(event, navalny)
 			
-def update_screen(ai_settings, screen, navalny, omons, bullets):
+def update_screen(ai_settings, screen, navalny, omons, bullets, 
+                  play_button):
 	# При каждом проходе цикла перерисовывается экран.
 	screen.fill(ai_settings.bg_color)
+        # Кнопка Play отображается в том случае, если игра неактивна
+        if not stats.game_active:
+            play_button.draw.button()
 	# Все пули выводятся позади навального и противников
 	for bullet in bullets.sprites():
 		bullet.draw_bullet()
