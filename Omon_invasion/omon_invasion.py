@@ -3,6 +3,7 @@ import pygame
 from pygame.sprite import Group
 from settings import Settings
 from game_stats import GameStats
+from button import Button
 from navalny import Navalny
 from omon import Omon
 import game_functions as gf
@@ -14,8 +15,11 @@ def run_game():
 	screen = pygame.display.set_mode((ai_settings.screen_width, 
 	ai_settings.screen_height))
 	pygame.display.set_caption("Omon Invasion")
+        
+        #Создание кнопки play. 
+        play_button = Button(ai_settings, screen, "play") 
 
-	# Создание экземпляра для хранения игровойй статистики.
+	# Создание экземпляра для хранения игровой статистики.
 	stats = GameStats(ai_settings)
 	# Создание Навального.
 	navalny = Navalny(ai_settings, screen)
@@ -35,6 +39,7 @@ def run_game():
 		navalny.update()
 		gf.update_bullets(ai_settings, screen, navalny, omons, bullets)
 		gf.update_omons(ai_settings, stats, screen, navalny, omons, bullets)
-		gf.update_screen(ai_settings, screen, navalny, omons, bullets)
+		gf.update_screen(ai_settings, screen, navalny, omons, bullets, 
+                                 play_button)
 
 run_game()
